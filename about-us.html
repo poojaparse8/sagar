@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/style.css">
+  <!-- bootstrap links -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <style>
+    .banner {
+      background-image: url(./images/banner.jpg);
+      width: 100%;
+      height: 80vh;
+      background-position: center;
+      background-size: cover;
+      position: relative;
+    }
+  
+.team-title {
+  font-size: 0.8rem;
+  color: #f1c40f;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.team-heading {
+  font-size: 1.8rem;
+  margin-bottom: 40px;
+}
+
+.team-card {
+  background: transparent;
+  border: none;
+  overflow: hidden;
+  position: relative;
+  transition: 0.4s ease;
+  height: 420px !important;
+}
+
+.team-card img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  filter: grayscale(100%) brightness(0.6);
+  transition: 0.5s ease;
+  transform: scale(1);
+}
+
+.team-card .card-body {
+  /* background-color: rgba(0, 0, 0, 0.75); */
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 20px 10px;
+  transition: 0.4s ease;
+}
+
+.team-card h5 {
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.team-card .role {
+  color: #f1c40f;
+  font-size: 0.8rem;
+  margin-bottom: 12px;
+}
+
+/* Social Icons */
+.social-icons .icon-box {
+  background: #333;
+  color: #fff;
+  padding: 8px 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  display: inline-block;
+  transition: 0.3s ease;
+}
+
+.social-icons .icon-box:hover {
+  background-color: #f1c40f;
+  color: #000;
+}
+
+/* Hover Effects */
+.team-card:hover {
+  transform: translateY(-5px);
+}
+
+.team-card:hover img {
+  filter: grayscale(0%) brightness(1);
+  transform: scale(1.05);
+}
+
+/* Always active on highlighted */
+.team-card.highlighted {
+  border-bottom: 4px solid #f1c40f;
+}
+
+.team-card.highlighted img {
+  filter: grayscale(0%) brightness(1);
+}
+    .info {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .page-title {
+      font-size: 50px;
+    }
+
+    /* ======================================================================= */
+
+    .about-section {
+      /* background-color: #000; */
+      padding: 100px 20px;
+    }
+
+    .containerr {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: stretch;
+      /* Makes all children the same height */
+      gap: 40px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .about-left,
+    .about-center,
+    .about-right {
+      flex: 1 1 300px;
+      min-width: 280px;
+    }
+
+    /* Text Column */
+    .tagline {
+      color: #f9a825;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .heading {
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+      line-height: 1.3;
+    }
+
+
+
+    .description {
+      color: #393E46;
+      line-height: 1.6;
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      background-color: #f9a825;
+      color: #ffff;
+      text-decoration: none;
+      padding: 12px 24px;
+      font-weight: bold;
+      border-radius: none;
+      /* display: inline-block; */
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #e08e00;
+    }
+
+    /* Image Column */
+    .image-wrapper {
+      position: relative;
+    }
+
+    .top-img {
+      width: 100%;
+      height: 100%;
+      border-radius: 6px;
+    }
+
+    .bottom-img {
+      width: 70%;
+      border-radius: 6px;
+      position: absolute;
+      bottom: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Right Box */
+    .about-right .info-box {
+      display: flex;
+      background: #1a1a1a;
+      padding: 16px;
+      border-radius: 6px;
+      margin-bottom: 20px;
+      align-items: flex-start;
+      gap: 15px;
+    }
+
+    .about-right .info-box i {
+      font-size: 24px;
+      color: #f9a825;
+      min-width: 32px;
+    }
+
+    .about-right .info-box h4 {
+      font-size: 18px;
+      margin: 0;
+    }
+
+    .about-right .info-box p {
+      color: #bbb;
+      font-size: 14px;
+      margin-top: 6px;
+    }
+
+    .about-center .image-wrapper {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      position: relative;
+    }
+
+    .top-img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+
+    .about-left,
+    .about-center,
+    .about-right {
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Section */
+    .services-section {
+      padding: 80px 20px;
+      background-color: #242424;
+    }
+
+    .services-container {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+
+    /* Card Styling */
+    .service-card {
+      background-color: #1a1a1a;
+      padding: 30px 20px;
+      border-radius: 6px;
+      width: 100%;
+      /* max-width: 350px; */
+      text-align: center;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .service-card:hover {
+      border-top: 3px solid #f9a825;
+    }
+
+    .service-icon {
+      background-color: #2a2a2a;
+      width: 60px;
+      height: 60px;
+      margin: 0 auto 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .service-icon i {
+      font-size: 24px;
+      color: #f9a825;
+    }
+
+    .service-card h3 {
+      font-size: 20px;
+      margin-bottom: 15px;
+      color: #fff;
+      line-height: 1.4;
+    }
+
+    .service-card p {
+      color: #bbb;
+      font-size: 14px;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #f9a825;
+      color: #fff;
+      border-radius: none;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 10px 20px;
+      /* border-radius: 4px; */
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #e08e00;
+    }
+.about-video{
+  background-image:  linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(./images/about-video.jpg);
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position:center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.video-content{
+  font-size: 60px;
+  color:white;
+}
+    /* Responsive */
+    @media (max-width: 992px) {
+      .services-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .service-card {
+        width: 100%;
+        /* max-width: 500px; */
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 991px) {
+      .containerr {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: stretch;
+        /* Makes all children the same height */
+        gap: 40px;
+        max-width: 1200px;
+        margin: auto;
+      }
+
+
+      .bottom-img {
+        position: relative;
+        transform: none;
+        left: auto;
+        bottom: auto;
+        margin-top: 20px;
+      }
+
+      .about-right {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <!-- Banner Section -->
+    <div class="banner position-relative">
+      <!-- Navigation Bar -->
+        <!-- Navigation Bar -->
+  
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg py-0 backbg px-4 px-md-5 position-absolute w-100" style="z-index: 999;">
+        <a class="navbar-brand py-3" href="#">
+            <img src="./images/logo.png.webp" width="150px" alt="">
+        </a>
+        <button class="navbar-toggler collapsed py-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="toggler-icon top-bar"></span>
+            <span class="toggler-icon middle-bar"></span>
+            <span class="toggler-icon bottom-bar"></span>
+        </button>
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto text-md-center">
+                <li class="nav-item borderLine"><a class="nav-link" href="index.html">HOME</a></li>
+                <li class="nav-item borderLine px-md-3"><a class="nav-link" href="./about-us.html">ABOUT US</a></li>
+                <li class="nav-item borderLine px-md-3"><a class="nav-link" href="./services.html">SERVICES</a></li>
+                <!-- <li class="nav-item borderLine"><a class="nav-link" href="./pricing.php">PRICING</a></li> -->
+                <li class="nav-item borderLine px-md-3"><a class="nav-link" href="./weddings-and-banquets.html">PORTFOLIO</a></li>
+                <li class="nav-item borderLine px-md-3"><a class="nav-link" href="contact-us.html">CONTACT</a></li>
+            </ul>
+        </div>
+    </nav>
+
+      <!-- Banner Slider -->
+
+
+      <!-- Text Overlay -->
+      <div class="info">
+        <h2 class="text-light page-title">About Us</h2>
+      </div>
+    </div>
+    <section class="about-section">
+      <div class="containerr">
+        <!-- Left Content -->
+        <div class="about-left">
+          <h5 class="tagline">WHO WE ARE</h5>
+          <h1 class="heading"><span>Framing the Beauty</span> in<br>Every Moment.</h1>
+          <p class="description">
+            Auctor ac nibh ligula consectetur ut pellentesque montes parturient. Gravida letius fusce iaculis amet aliquet natoque erat. Arcu fusce praesent himenaeos fames placerat eu purus id libero congue malesuada.
+          </p>
+          <a href="#" class="btn">LEARN MORE</a>
+        </div>
+
+        <!-- Center Images -->
+        <div class="about-center">
+          <div class="image-wrapper">
+            <div class="h-100"> <img src="./images/about-page-2.jpg" alt="Photographer" width="100%" class=" img-fluid top-img" /></div>
+            <img src="./images/about-page-2.jpg" alt="Mobile Photographer" class="bottom-img" />
+          </div>
+        </div>
+
+        <!-- Dynamic Boxes (Right Column) -->
+        <!-- Right Column -->
+        <div class="about-right">
+          <div class="info-box">
+            <i class="fas fa-heart"></i>
+            <div>
+              <h4 class="text-light">Our Vision</h4>
+              <p>Auctor elementum etiam congue gravida posuere nostra inceptos scelerisque mus consequat imperdiet.</p>
+            </div>
+          </div>
+          <div class="info-box">
+            <i class="fas fa-globe"></i>
+            <div>
+              <h4 class="text-light">Our Mission</h4>
+              <p>Auctor elementum etiam congue gravida posuere nostra inceptos scelerisque mus consequat imperdiet.</p>
+            </div>
+          </div>
+          <div class="info-box">
+            <i class="fas fa-mug-hot"></i>
+            <div>
+              <h4 class="text-light">Our Motto</h4>
+              <p>Auctor elementum etiam congue gravida posuere nostra inceptos scelerisque mus consequat imperdiet.</p>
+            </div>
+          </div>
+        </div>
+    </section>
+    <section class="services-section">
+      <div class="containerr">
+        <div class="row">
+          <!-- Card 1 -->
+          <div class="col-lg-4">
+            <div class="service-card ">
+              <div class="service-icon">
+                <i class="fas fa-image"></i>
+              </div>
+              <h3>Event Photography &<br> Videography</h3>
+              <p>Effictur lobortis amet faucibus feugiat aptent convallis cubilia bibendum nostra nulla arcu</p>
+              <a href="#" class="btn text-light rounded-0">DISCOVER MORE</a>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <!-- Card 2 (Highlighted) -->
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fas fa-film"></i>
+              </div>
+              <h3>Portrait & Commercial<br> Photography</h3>
+              <p>Effictur lobortis amet faucibus feugiat aptent convallis cubilia bibendum nostra nulla arcu</p>
+              <a href="#" class="btn text-light rounded-0">DISCOVER MORE</a>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <!-- Card 3 -->
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fas fa-video"></i>
+              </div>
+              <h3>Drone Photography &<br> Videography</h3>
+              <p>Effictur lobortis amet faucibus feugiat aptent convallis cubilia bibendum nostra nulla arcu</p>
+              <a href="#" class="btn text-light rounded-0">DISCOVER MORE</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <section class="about-video">
+      <div class="text-center">
+        <h2 class="video-content text-light">Because Every <br> Frame Deserves <br> to Be Perfect</h2>
+        <p class="text-light my-4">Ultrices quam mattis posuere porttitor tellus rhoncus tristique. <br> Primis aliquam dignissim interdum vel suscipit sodales.</p>
+        <a href="" class="btn text-light rounded-0"> DISCOVER MORE</a>
+      </div>
+    </section>
+
+    <!-- our team -->
+    <section class="team-section py-5 text-white text-center">
+  <p class="team-title">MEET OUR TEAM</p>
+  <h2 class="team-heading text-dark">We talk a lot about hope helping and teamwork.</h2>
+  
+  <div class="px-3 px-lg-5">
+    <div class="row g-2">
+      
+      <!-- Team Member 1 -->
+      <div class="col-md-6 col-lg-3">
+        <div class="team-card h-100">
+          <img src="./images/about-page-2.jpg" alt="Team Member 1" class="img-fluid">
+          <div class="card-body">
+            <h5>Oscar Andrews</h5>
+            <p class="role">FOUNDER</p>
+            <div class="social-icons d-flex justify-content-center gap-2">
+              <a href="#" class="icon-box"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="icon-box"><i class="bi bi-twitter"></i></a>
+              <a href="#" class="icon-box"><i class="bi bi-linkedin"></i></a>
+              <a href="#" class="icon-box"><i class="bi bi-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Team Member 2 (Highlighted) -->
+      <div class="col-md-6 col-lg-3">
+        <div class="team-card h-100">
+          <img src="./images/about-page-2.jpg" alt="Team Member 2" class="img-fluid">
+          <div class="card-body">
+            <h5>Caroline Roberts</h5>
+            <p class="role">CO-FOUNDER</p>
+            <div class="social-icons d-flex justify-content-center gap-2">
+              <a href="#" class="icon-box"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="icon-box"><i class="bi bi-twitter"></i></a>
+              <a href="#" class="icon-box"><i class="bi bi-linkedin"></i></a>
+              <a href="#" class="icon-box"><i class="bi bi-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Team Member 3 -->
+      <div class="col-md-6 col-lg-3">
+        <div class="team-card h-100">
+          <img src="./images/about-page-2.jpg" alt="Team Member 3" class="img-fluid">
+          <div class="card-body">
+            <h5>James Williams</h5>
+            <p class="role">PHOTOGRAPHER</p>
+            <div class="social-icons d-flex justify-content-center gap-2">
+              <a href="#" class="icon-box"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="icon-box"><i class="bi bi-twitter"></i></a>
+              <a href="#" class="icon-box"><i class="bi bi-linkedin"></i></a>
+              <a href="#" class="icon-box"><i class="bi bi-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Team Member 4 -->
+      <div class="col-md-6 col-lg-3">
+        <div class="team-card h-100">
+          <img src="./images/about-page-2.jpg" alt="Team Member 4" class="img-fluid">
+          <div class="card-body">
+            <h5>Bethany Brooks</h5>
+            <p class="role">BUSINESS MANAGER</p>
+            <div class="social-icons d-flex justify-content-center gap-2">
+              <a href="#" class="icon-box"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="icon-box"><i class="bi bi-twitter"></i></a>
+              <a href="#" class="icon-box"><i class="bi bi-linkedin"></i></a>
+              <a href="#" class="icon-box"><i class="bi bi-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+   <footer class="bg-black text-white py-5">
+  <div class="container">
+    <div class="row text-center text-md-start">
+      
+      <!-- Contact Info -->
+      <div class="col-md-4 mb-4">
+        <h5 class="mb-4">Get in touch</h5>
+
+        <div class="d-flex align-items-center mb-3">
+          <div class="me-3">
+            <i class="bi bi-telephone-outbound fs-2 text-warning"></i>
+          </div>
+          <div>
+            <small class="d-block text-white-50">FREE CONSULTATIONS</small>
+            <span class="text-warning fw-bold">(888) 4000-2424</span>
+          </div>
+        </div>
+
+        <div class="d-flex align-items-center">
+          <div class="me-3">
+            <i class="bi bi-envelope fs-2 text-warning"></i>
+          </div>
+          <div>
+            <small class="d-block text-white-50">EMAIL SUPPORT</small>
+            <span class="text-warning fw-bold">hello@domain.tld</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Center Logo & Social -->
+      <div class="col-md-4 mb-4 text-center">
+        <img src="logo.png" alt="Snapix Logo" class="mb-3" style="max-width: 100px;" />
+        <p class="text-white-50 small">
+          Volutpat vulputate maecenas quis interdum metus imperdiet commodo accumsan ultricies lectus justo
+        </p>
+        <div class="d-flex justify-content-center gap-3 mt-3">
+          <a href="#" class="text-warning fs-5"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="text-warning fs-5"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="text-warning fs-5"><i class="bi bi-twitter"></i></a>
+          <a href="#" class="text-warning fs-5"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+
+      <!-- Newsletter -->
+      <div class="col-md-4 mb-4">
+        <h5 class="mb-4">Newsletter</h5>
+        <p class="text-white-50 small">
+          Sign up our newsletter to get update information, news and free insight.
+        </p>
+        <form>
+          <input type="email" class="form-control mb-2 bg-dark border-dark text-white" placeholder="Email">
+          <button type="submit" class="btn btn-warning w-100">
+            <i class="bi bi-envelope me-1"></i> SIGN UP
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <hr class="border-secondary mt-4" />
+    <div class="d-md-flex justify-content-between text-center text-md-start small">
+      <div class="text-white-50 mb-2 mb-md-0">
+        Copyright © 2025 Snapix, All rights reserved. Powered by <span class="text-light">MoxCreative</span>.
+      </div>
+      <div class="text-white-50">
+        <a href="#" class="text-white-50 text-decoration-none me-2">Term of services</a> •
+        <a href="#" class="text-white-50 text-decoration-none mx-2">Privacy Policy</a> •
+        <a href="#" class="text-white-50 text-decoration-none ms-2">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  </div>
+
+</body>
+
+</html>

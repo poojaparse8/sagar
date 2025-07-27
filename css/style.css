@@ -1,0 +1,422 @@
+@import url('https://fonts.googleapis.com/css2?family=Gilda+Display&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.wrapper{
+    font-family: "Roboto", sans-serif; 
+}
+
+.book-btn{
+  width: 100px;
+  border: 1px solid #fff;
+  font-size: 13px;
+}
+/* 
+.gilda-display-regular {
+    font-family: "Gilda Display", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  Roboto: CSS classes
+
+.roboto-thin {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.roboto-light {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.roboto-regular {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.roboto-medium {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.roboto-bold {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.roboto-black {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.roboto-thin-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.roboto-light-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.roboto-regular-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.roboto-medium-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.roboto-bold-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.roboto-black-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+} */
+
+.nav-item a{
+    color: #fff;
+    font-size: 16px;
+  }
+ .nav-item a:hover{
+  color: #c46813!important;
+ }
+
+ /* Hide the dropdown by default */
+.nav-item .dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 35%;
+  background-color: #fff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: 230px;
+}
+
+/* Show the dropdown when hovering on the nav item */
+.nav-item:hover .dropdown {
+  display: block;
+  animation: slideDown 0.3s ease-out;
+}
+
+/* Slide down animation */
+@keyframes slideDown {
+  0% {
+      opacity: 0;
+      transform: translateY(-10px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Style for the dropdown items */
+.nav-item .dropdown li {
+  padding: 5px 12px;
+}
+
+.nav-item .dropdown li a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+  padding: 8px;
+}
+
+.nav-item .dropdown li a:hover {
+  background-color: #f0f0f0;
+}
+
+ /* navbar hamburger================================================================= */
+ /* Remove border from toggler */
+ .navbar-toggler {
+  border: 0 !important;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border: 0 !important;
+}
+
+/* Lines of the Toggler */
+.toggler-icon{
+  width: 30px;
+  height: 3px;
+  background-color: #e74c3c;
+  display: block;
+  transition: all 0.2s;
+}
+
+/* Adds Space between the lines */
+.middle-bar{
+  margin: 5px auto;
+}
+
+/* State when navbar is opened (START) */
+.navbar-toggler .top-bar {
+  transform: rotate(45deg);
+  transform-origin: 10% 10%;
+}
+
+.navbar-toggler .middle-bar {
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+
+.navbar-toggler .bottom-bar {
+  transform: rotate(-45deg);
+  transform-origin: 10% 90%;
+}
+/* State when navbar is opened (END) */
+
+/* State when navbar is collapsed (START) */
+.navbar-toggler.collapsed .top-bar {
+  transform: rotate(0);
+}
+
+.navbar-toggler.collapsed .middle-bar {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+.navbar-toggler.collapsed .bottom-bar {
+  transform: rotate(0);
+}
+/* State when navbar is collapsed (END) */
+
+/* Color of Toggler when collapsed */
+.navbar-toggler.collapsed .toggler-icon {
+  background-color: #777777;
+}
+
+/* General Banner Styling */
+.banner {
+  
+    position: relative;
+}
+
+.company-name {
+    font-size: 30px;
+    font-family: "Gilda Display", serif;
+}
+
+
+
+
+.navbar {
+  background: transparent;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+.box{
+  /* background-color: #1b1c29; */
+  height: 400px;
+}
+.box-title{
+  font-family: "Gilda Display", serif;
+  text-align: center;
+  font-weight: bold;
+  color: #0f0f0f;
+  letter-spacing: 4px;
+  font-size: 25px;
+  text-transform: uppercase;
+}
+.box-title1{
+  font-family: "Gilda Display", serif;
+  text-align: center;
+  font-weight: bold;
+  color: #0f0f0f;
+  letter-spacing: 3px;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+.services{
+
+      margin-top: -50px;
+      z-index: 2;
+      position: relative;
+    }
+.about{
+  background-color: #071112;
+  margin: 100px 0px;
+  color:#fff;
+  width: 100%;
+  height: 100vh;
+}
+.about h2,.choose-us h2{
+  font-size: 50px;
+  font-family: "Gilda Display", serif;
+}
+.startup{
+  width: 100%;
+  height: 100vh;
+  background-image: url(../images/startup_bg.png.webp);
+  background-size: cover;
+}
+.Services-section{
+  overflow: hidden; /* Ensure content outside the container is hidden */
+}
+
+.Services-section{
+  overflow: hidden; /* Hide content outside the viewport */
+  width: 100%;      /* Full-width container */
+ 
+  padding-bottom: 100px;
+}
+.span-txt{
+  font-family: "Gilda Display", serif;
+  font-weight: bold;
+  color: #7a7878;
+}
+.text-wrapper {
+  display: flex;    /* Align content horizontally */
+  width: max-content; /* Allow the content to extend beyond the container */
+  position: relative;
+}
+
+.text-content {
+  display: flex; /* Ensure text is inline horizontally */
+}
+
+.text-content h2 {
+  font-size: 150px;
+  text-transform: uppercase;
+  -webkit-text-stroke-width: 0.1px;
+  color: rgb(223, 217, 217);
+  white-space: nowrap;
+  padding: 0.6rem;
+  letter-spacing: 1px;
+}
+.categories{
+  margin-top: -80px;
+      z-index: 2;
+      position: relative;
+}
+.one1,.two,.three,.four{
+  margin-top: -140px;
+  z-index: 2;
+  position: relative;
+}
+.choose-us{
+  background-color: #071112;
+  padding: 100px 0px;
+}
+.reasons {
+  font-size: 13px;
+}
+.img-owner{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+.img-owner{
+  margin-top: -40px;
+  z-index: 2;
+  position: relative;
+}
+.card-text{
+  font-size: 13px;
+  color: rgb(172, 165, 165);
+}
+.tablist{
+  width: 50%;
+  margin: 0 auto;
+}
+.tablist li{
+  list-style-type: none;
+  font-family: "Gilda Display", serif;
+  font-weight: bold;
+  /* color: #7a7878; */
+}
+.tablist li {
+  position: relative;
+  padding: 0 15px; /* Space around each list item */
+}
+
+.tablist li:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 1px; /* Line thickness */
+  background-color: #ccc; /* Line color */
+}
+
+.tablist li button {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 10px;
+  color: #000;
+}
+
+.tablist li button:hover {
+  color: #007bff; /* Hover effect */
+}
+
+.tablist li button.active {
+  color: #007bff;
+  font-weight: bold;
+}
+
+/* Small screens: Mobile devices */
+@media (min-width: 768px) {
+  .bg-md-transparent {
+    background-color: transparent !important;
+}
+.pricing{
+  font-size: 70px;
+}
+.choose-plan{
+  padding: 100px 0px;
+  
+}
+.plan{
+  width: 80%;
+  margin: 0 auto;
+}
+}
+/* Medium screens: Tablets */
+@media (max-width: 992px) {
+ 
+ 
+  
+}
+
+
+
+
+
+
+
